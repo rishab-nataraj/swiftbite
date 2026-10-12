@@ -948,3 +948,21 @@ The full diagram lives at **`docs/architecture.drawio`** — open it at <https:/
 Built with FastAPI, React and Docker.
 
 </div>
+
+## Software Design
+
+SwiftBite uses a layered three-tier architecture: a React single-page app (presentation), a FastAPI backend (application) and PostgreSQL (data), each running in its own Docker container. Inside the backend, routers, models, schemas and security helpers are kept in separate modules, so each has one responsibility and new features such as the restaurant dashboard or rider queue can be added as new routers without touching existing code. Key choices include recomputing order prices on the server, storing item name and price snapshots on each order, and using stateless JWT authentication, all to keep the system secure, maintainable and easy to extend.
+
+### Diagrams
+
+| Diagram | Editable source | PNG export |
+|---|---|---|
+| System architecture | [architecture.drawio](docs/design/architecture.drawio) | ![SwiftBite architecture](docs/design/architecture.png) |
+
+### UI design
+
+Figma prototype: `<PASTE YOUR FIGMA SHARE LINK HERE>`
+
+UI screenshots: see [docs/design/](docs/design/)
+
+
